@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excel for Strategic Business Analysis — Shafin Shahriar Akhond</title>
+  <meta name="description" content="Every few years, someone publishes an article declaring Excel dead. It never is. For structured thinking, scenario modeling, and making complexity legible to stakeholders who don't have a data science background, nothing beats a well-built spreadsheet.">
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@300,400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .article-page { min-height: 100vh; padding-top: var(--s16); }
+    .article-hero { position: relative; width: 100%; max-height: 420px; overflow: hidden; border-radius: 12px; margin-bottom: var(--s8); }
+    .article-hero img { width: 100%; height: 420px; object-fit: cover; display: block; }
+    .article-hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 50%; background: linear-gradient(to top, var(--bg), transparent); }
+    .article-back { display: inline-flex; align-items: center; gap: 6px; color: var(--tx3); font-family: var(--mono); font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; text-decoration: none; margin-bottom: var(--s6); transition: color .2s; }
+    .article-back:hover { color: var(--ac); }
+    .article-back svg { width: 16px; height: 16px; }
+    .article-cat { display: inline-block; font-family: var(--mono); font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; color: var(--ac); background: rgba(0,194,212,.08); padding: 4px 12px; border-radius: 4px; margin-bottom: var(--s4); }
+    .article-title { font-family: var(--display); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.15; color: var(--tx1); margin-bottom: var(--s4); }
+    .article-meta { display: flex; gap: var(--s4); font-family: var(--mono); font-size: .8rem; color: var(--tx3); letter-spacing: .04em; margin-bottom: var(--s8); flex-wrap: wrap; }
+    .article-meta span { display: flex; align-items: center; gap: 4px; }
+    .article-body { max-width: 720px; }
+    .article-body p { font-family: var(--body); font-size: 1.05rem; line-height: 1.75; color: var(--tx2); margin-bottom: var(--s4); }
+    .article-body h2 { font-family: var(--display); font-size: 1.4rem; font-weight: 700; color: var(--tx1); margin-top: var(--s8); margin-bottom: var(--s4); padding-bottom: var(--s2); border-bottom: 1px solid var(--bd); }
+    .article-body h3 { font-family: var(--display); font-size: 1.15rem; font-weight: 600; color: var(--tx1); margin-top: var(--s6); margin-bottom: var(--s3); }
+    .article-body blockquote { border-left: 3px solid var(--ac); margin: var(--s6) 0; padding: var(--s4) var(--s6); background: rgba(0,194,212,.04); border-radius: 0 8px 8px 0; }
+    .article-body blockquote p { color: var(--tx1); font-style: italic; font-size: 1.08rem; margin-bottom: 0; }
+    .article-body ul { margin: var(--s3) 0 var(--s4) var(--s4); list-style: none; }
+    .article-body ul li { position: relative; padding-left: 20px; font-family: var(--body); font-size: 1.02rem; line-height: 1.7; color: var(--tx2); margin-bottom: var(--s2); }
+    .article-body ul li::before { content: ''; position: absolute; left: 0; top: 10px; width: 8px; height: 8px; border: 1.5px solid var(--ac); border-radius: 2px; }
+    .article-footer { margin-top: var(--s12); padding-top: var(--s6); border-top: 1px solid var(--bd); }
+    .article-footer a { color: var(--ac); text-decoration: none; font-family: var(--mono); font-size: .85rem; letter-spacing: .04em; }
+    .article-footer a:hover { text-decoration: underline; }
+    @media (max-width: 768px) {
+      .article-page { padding-top: var(--s12); }
+      .article-hero { max-height: 240px; }
+      .article-hero img { height: 240px; }
+      .article-body p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="ambient" aria-hidden="true">
+  <div class="ambient__orb ambient__orb--1"></div>
+  <div class="ambient__orb ambient__orb--2"></div>
+  <div class="ambient__grid"></div>
+</div>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="../index.html#hero" class="nav__logo" aria-label="Home">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="5" stroke="currentColor" stroke-width="1.2"/><path d="M8 20v-5c0-2 1.5-3.5 3.5-3.5H13l-3.5-3.5H13l3.5 3.5h1c2 0 3.5 1.5 3.5 3.5v5" stroke="url(#lg)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 11.5V20" stroke="url(#lg)" stroke-width="1.8" stroke-linecap="round"/><defs><linearGradient id="lg" x1="8" y1="8" x2="21" y2="20" gradientUnits="userSpaceOnUse"><stop stop-color="#00c2d4"/><stop offset="1" stop-color="#0066ff"/></linearGradient></defs></svg>
+      <span>Shafin</span>
+    </a>
+    <ul class="nav__links" role="list">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#blog">Blog</a></li>
+      <li><a href="../index.html#contact" class="nav__cta">Contact</a></li>
+    </ul>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page">
+<section class="sec article-page">
+  <div class="container">
+    <a href="../index.html#blog" class="article-back"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg> Back to Blog</a>
+
+    <div class="article-hero">
+      <img src="../assets/blog-excel-strategy.png" alt="Excel for Strategic Business Analysis" loading="eager">
+    </div>
+
+    <div class="article-cat">Power BI & Excel</div>
+    <h1 class="article-title">Excel for Strategic Business Analysis</h1>
+    <div class="article-meta">
+      <span>By Md. Shafin Shahriar Akhond</span>
+      <span>&middot;</span>
+      <span>Jan 2026</span>
+      <span>&middot;</span>
+      <span>7 min read</span>
+    </div>
+
+    <div class="article-body">
+      <p>I have a slightly contrarian take on Excel: it's not just a tool, it's a thinking framework. The act of building a model or a tracker in Excel forces you to be explicit about your assumptions, your logic, and the relationships between variables. That discipline — making your reasoning visible and testable — is valuable in itself. It's what separates structured analysis from a gut feeling with a chart on top of it.</p>
+      <p>During my internship at Nestlé Bangladesh, I built campaign performance trackers for the MAGGI brand team. Nothing exotic — organized data entry, calculated fields, conditional formatting for alerts, pivot tables for weekly summaries. But those tools became the basis for weekly brand discussions, and I learned quickly that the quality of a conversation is often determined by the quality of the data framing it. Bring vague numbers to a meeting and you get a vague discussion. Bring clear, well-organized analysis and suddenly the room is making decisions instead of debating what the situation actually is.</p>
+      <p>Later, as President of BUP Finance Society, I managed budgets and built financial models for events and initiatives. The stakes were real: misallocated budget meant cancelled programs. Excel was the tool that made complexity manageable, kept everyone accountable to the same numbers, and gave me the structured thinking discipline I needed to lead a team through financial planning for the first time.</p>
+      <h2>Pivot Tables: Underused, Overestimated</h2>
+      <p>Most people who use pivot tables don't use them to their potential. They treat them as a summarization shortcut — drag a field, get a count, done. That's useful, but it's not analysis. Pivot tables become analytically powerful when you use them to explore dimensional relationships in your data — when you layer multiple variables and look for patterns that wouldn't be visible in a flat table.</p>
+      <p>In a regional sales context, for instance, a pivot table can show you not just total sales by region but sales by region by product category by month, with a calculated field for growth rate. Suddenly you're not looking at a number; you're looking at a story. Which regions are driving growth in which categories? Where is growth decelerating? Which product lines are concentrated in specific geographies and what does that tell you about the brand's positioning or distribution health?</p>
+      <p>At Nestlé, I used pivot tables to track MAGGI's campaign performance across different consumer segments and media channels. The same dataset could tell you something completely different depending on which dimension you put in the row versus the column, or which filter you applied. That flexibility — exploring multiple analytical angles without writing a single line of code — is why pivot tables remain one of the most powerful tools available to non-technical business professionals. The constraint isn't the tool; it's the user's willingness to experiment with the data.</p>
+      <h2>Scenario Planning and What-If Analysis</h2>
+      <p>One of Excel's most underrated capabilities is scenario modeling. The Scenario Manager and Data Tables functions allow you to test multiple assumptions simultaneously and see how they flow through your model. For marketing and business planning, this is invaluable — not because forecasts are ever exactly right, but because thinking through what happens under different conditions prepares you to respond quickly when reality diverges from the plan.</p>
+      <p>Consider a marketing budget model. Your plan assumes 5% sales growth and a 15% media spend increase. What happens if growth comes in at 2%? What if media costs increase by 20% due to competitive pressure? A well-built scenario model lets you answer those questions in minutes rather than rebuilding assumptions from scratch each time. More importantly, it lets you present stakeholders with a range of outcomes rather than a single-point forecast that will almost certainly be wrong in some dimension.</p>
+      <p>When I was managing the Finance Society budget at BUP, I built a base-case / optimistic / pessimistic model for our annual flagship event. It wasn't sophisticated by any professional standard, but it meant that when our sponsorship revenue came in lower than expected, we had already modeled that scenario and could act on the contingency plan immediately rather than scrambling to figure out what to cut. That's the real value of what-if analysis — not the model itself, but the thinking it forces you to do in advance.</p>
+      <h2>Building Dashboards for Non-Technical Stakeholders</h2>
+      <p>Excel dashboards are different from Power BI dashboards in one important way: they're usually consumed in meeting rooms by people who will scroll past the formulas and judge the entire document by how the summary page looks. That's not a criticism — it's a design constraint you need to build for deliberately.</p>
+      <p>The principles I've developed for Excel dashboards: hide everything non-essential, protect formula cells, use named ranges instead of hard-coded references, and build the summary page as if the reader has thirty seconds and no background context. Labels should be so clear that no verbal explanation is required. Chart titles should state the insight, not just describe the data — "North region outperforming by 12%" is more useful than "Regional Sales Comparison." The goal is a document that drives a decision without requiring the builder to be in the room to translate it.</p>
+      <p>Color should communicate status, not decorate. I use a simple three-color system: green for on-track, amber for attention needed, red for underperforming. Conditional formatting applies these automatically so the dashboard updates itself when the underlying data changes. This sounds basic, but getting these fundamentals right is what makes a spreadsheet feel like a decision-support system rather than a data dump that someone has to interpret manually.</p>
+      <h2>Financial Modeling for Marketers</h2>
+      <p>Marketing professionals who can build basic financial models have a significant edge in business conversations. Not because finance teams can't do it — they can and do — but because being able to model your own marketing ROI, budget allocation tradeoffs, and scenario analyses means you don't have to wait for someone else to validate your thinking. You show up to the conversation already having stress-tested your assumptions.</p>
+      <p>The core skills here aren't exotic: understanding how revenue flows from marketing investment, building a simple attribution model, and using INDEX-MATCH or XLOOKUP to pull data across worksheets without creating a brittle, formula-dependent mess. Learning to use SUMIFS for flexible conditional aggregation. Building dynamic named ranges that expand as new data is added. These are learnable with focused practice over a matter of weeks. The returns compound for years.</p>
+      <p>Excel isn't going anywhere, regardless of what the next generation of data tools looks like. The ability to think structurally, model assumptions explicitly, and present complex information clearly will remain foundational for as long as business decisions need to be justified to other humans. Excel is one of the best training grounds for exactly that kind of thinking — and for most marketing professionals, it's already sitting in their taskbar waiting to be used better than it currently is.</p>
+      <h2>The Compounding Value of Structured Thinking</h2>
+      <p>The reason I keep coming back to Excel — even as I explore more sophisticated tools — is that it keeps my thinking honest. Every formula is a stated assumption. Every linked cell is a declared relationship. If your model breaks when you change an input, it tells you something about the structure of your logic. That kind of feedback loop is genuinely useful for developing the intellectual discipline that carries over into every analytical task, regardless of the tool.</p>
+      <p>For aspiring marketers and business professionals early in their careers, I'd say this: don't rush past Excel in your eagerness to learn more glamorous tools. Spend time in it. Build things that are more complex than you need. Figure out why models break and how to fix them. The patience and structured thinking you develop there will make you better at everything else — and it will show in how you approach problems long after you've moved on to other platforms.</p>
+    </div>
+
+    <div class="article-footer">
+      <a href="../index.html#blog">&larr; Back to all articles</a>
+    </div>
+  </div>
+</section>
+</div>
+
+<script>
+  // Minimal nav toggle for article pages
+  const navToggle = document.querySelector('.nav__toggle');
+  const navLinks = document.querySelector('.nav__links');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.classList.toggle('active');
+      navToggle.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+  // Scroll nav
+  const nav = document.querySelector('.nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('nav--scrolled', scrollY > 60);
+  }, { passive: true });
+</script>
+<script data-pplx-inline-edit>
+(function(){
+  if(window===window.top)return;
+  function inlineAll(orig,clone){
+    if(orig.nodeType!==1)return;
+    try{
+      var cs=getComputedStyle(orig);
+      var t='';
+      for(var i=0;i<cs.length;i++){t+=cs[i]+':'+cs.getPropertyValue(cs[i])+';';}
+      clone.style.cssText=t;
+    }catch(e){}
+    var oc=orig.children,cc=clone.children;
+    for(var j=0;j<oc.length&&j<cc.length;j++){inlineAll(oc[j],cc[j]);}
+  }
+  function stripExternal(clone){
+    var imgs=clone.querySelectorAll('img');
+    for(var i=0;i<imgs.length;i++){
+      var s=imgs[i].getAttribute('src');
+      if(s&&!s.startsWith('data:'))imgs[i].removeAttribute('src');
+    }
+    var all=clone.querySelectorAll('*');
+    for(var i=0;i<all.length;i++){
+      var st=all[i].style.cssText;
+      if(st&&st.indexOf('url(')>=0){
+        all[i].style.cssText=st.replace(/url\(["']?(?!data:)[^)"']*["']?\)/gi,'none');
+      }
+    }
+  }
+  window.addEventListener('message',function(e){
+    if(!e.data||e.data.type!=='INLINE_EDIT_CAPTURE_REQUEST')return;
+    var scrollX=window.scrollX||window.pageXOffset||0;
+    var scrollY=window.scrollY||window.pageYOffset||0;
+    var w=window.innerWidth,h=window.innerHeight;
+    try{
+      var clone=document.documentElement.cloneNode(true);
+      var rm=clone.querySelectorAll('script,link[rel="stylesheet"],style');
+      for(var i=0;i<rm.length;i++){rm[i].remove();}
+      inlineAll(document.documentElement,clone);
+      stripExternal(clone);
+      var html=new XMLSerializer().serializeToString(clone);
+      var svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="'+h+'">'
+        +'<foreignObject width="100%" height="100%">'
+        +'<div xmlns="http://www.w3.org/1999/xhtml" style="width:'+w+'px;height:'+h+'px;overflow:hidden">'
+        +'<div style="transform:translate(-'+scrollX+'px,-'+scrollY+'px);transform-origin:top left">'
+        +html+'</div></div></foreignObject></svg>';
+      var svgUrl='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
+      var img=new Image();
+      img.onload=function(){
+        var c=document.createElement('canvas');c.width=w;c.height=h;
+        c.getContext('2d').drawImage(img,0,0);
+        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:c.toDataURL('image/png'),scrollX:scrollX,scrollY:scrollY},'*');
+      };
+      img.onerror=function(){
+        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
+      };
+      img.src=svgUrl;
+    }catch(err){
+      window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
+    }
+  });
+})();
+</script></body>
+</html>

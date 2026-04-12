@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Power BI for Marketing Professionals — Shafin Shahriar Akhond</title>
+  <meta name="description" content="You don't need to be a data analyst to build a marketing dashboard that actually drives decisions. Power BI has lowered the barrier significantly — but most marketers still build dashboards that look impressive and communicate nothing.">
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&f[]=satoshi@300,400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../base.css">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .article-page { min-height: 100vh; padding-top: var(--s16); }
+    .article-hero { position: relative; width: 100%; max-height: 420px; overflow: hidden; border-radius: 12px; margin-bottom: var(--s8); }
+    .article-hero img { width: 100%; height: 420px; object-fit: cover; display: block; }
+    .article-hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 50%; background: linear-gradient(to top, var(--bg), transparent); }
+    .article-back { display: inline-flex; align-items: center; gap: 6px; color: var(--tx3); font-family: var(--mono); font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; text-decoration: none; margin-bottom: var(--s6); transition: color .2s; }
+    .article-back:hover { color: var(--ac); }
+    .article-back svg { width: 16px; height: 16px; }
+    .article-cat { display: inline-block; font-family: var(--mono); font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; color: var(--ac); background: rgba(0,194,212,.08); padding: 4px 12px; border-radius: 4px; margin-bottom: var(--s4); }
+    .article-title { font-family: var(--display); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.15; color: var(--tx1); margin-bottom: var(--s4); }
+    .article-meta { display: flex; gap: var(--s4); font-family: var(--mono); font-size: .8rem; color: var(--tx3); letter-spacing: .04em; margin-bottom: var(--s8); flex-wrap: wrap; }
+    .article-meta span { display: flex; align-items: center; gap: 4px; }
+    .article-body { max-width: 720px; }
+    .article-body p { font-family: var(--body); font-size: 1.05rem; line-height: 1.75; color: var(--tx2); margin-bottom: var(--s4); }
+    .article-body h2 { font-family: var(--display); font-size: 1.4rem; font-weight: 700; color: var(--tx1); margin-top: var(--s8); margin-bottom: var(--s4); padding-bottom: var(--s2); border-bottom: 1px solid var(--bd); }
+    .article-body h3 { font-family: var(--display); font-size: 1.15rem; font-weight: 600; color: var(--tx1); margin-top: var(--s6); margin-bottom: var(--s3); }
+    .article-body blockquote { border-left: 3px solid var(--ac); margin: var(--s6) 0; padding: var(--s4) var(--s6); background: rgba(0,194,212,.04); border-radius: 0 8px 8px 0; }
+    .article-body blockquote p { color: var(--tx1); font-style: italic; font-size: 1.08rem; margin-bottom: 0; }
+    .article-body ul { margin: var(--s3) 0 var(--s4) var(--s4); list-style: none; }
+    .article-body ul li { position: relative; padding-left: 20px; font-family: var(--body); font-size: 1.02rem; line-height: 1.7; color: var(--tx2); margin-bottom: var(--s2); }
+    .article-body ul li::before { content: ''; position: absolute; left: 0; top: 10px; width: 8px; height: 8px; border: 1.5px solid var(--ac); border-radius: 2px; }
+    .article-footer { margin-top: var(--s12); padding-top: var(--s6); border-top: 1px solid var(--bd); }
+    .article-footer a { color: var(--ac); text-decoration: none; font-family: var(--mono); font-size: .85rem; letter-spacing: .04em; }
+    .article-footer a:hover { text-decoration: underline; }
+    @media (max-width: 768px) {
+      .article-page { padding-top: var(--s12); }
+      .article-hero { max-height: 240px; }
+      .article-hero img { height: 240px; }
+      .article-body p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="ambient" aria-hidden="true">
+  <div class="ambient__orb ambient__orb--1"></div>
+  <div class="ambient__orb ambient__orb--2"></div>
+  <div class="ambient__grid"></div>
+</div>
+
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav__inner">
+    <a href="../index.html#hero" class="nav__logo" aria-label="Home">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="5" stroke="currentColor" stroke-width="1.2"/><path d="M8 20v-5c0-2 1.5-3.5 3.5-3.5H13l-3.5-3.5H13l3.5 3.5h1c2 0 3.5 1.5 3.5 3.5v5" stroke="url(#lg)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 11.5V20" stroke="url(#lg)" stroke-width="1.8" stroke-linecap="round"/><defs><linearGradient id="lg" x1="8" y1="8" x2="21" y2="20" gradientUnits="userSpaceOnUse"><stop stop-color="#00c2d4"/><stop offset="1" stop-color="#0066ff"/></linearGradient></defs></svg>
+      <span>Shafin</span>
+    </a>
+    <ul class="nav__links" role="list">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#blog">Blog</a></li>
+      <li><a href="../index.html#contact" class="nav__cta">Contact</a></li>
+    </ul>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page">
+<section class="sec article-page">
+  <div class="container">
+    <a href="../index.html#blog" class="article-back"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg> Back to Blog</a>
+
+    <div class="article-hero">
+      <img src="../assets/blog-powerbi-marketing.png" alt="Power BI for Marketing Professionals" loading="eager">
+    </div>
+
+    <div class="article-cat">Power BI & Excel</div>
+    <h1 class="article-title">Power BI for Marketing Professionals</h1>
+    <div class="article-meta">
+      <span>By Md. Shafin Shahriar Akhond</span>
+      <span>&middot;</span>
+      <span>Feb 2026</span>
+      <span>&middot;</span>
+      <span>7 min read</span>
+    </div>
+
+    <div class="article-body">
+      <p>My entry point into dashboard thinking wasn't Power BI — it was Excel. During my internship at Nestlé Bangladesh, I built campaign trackers and brand health monitoring sheets that the team used to make weekly decisions. Nothing fancy. Conditional formatting, pivot tables, a few charts. But the discipline I developed doing that work — thinking about which numbers matter to whom, and how to present them clearly — translated directly to working with more sophisticated tools later.</p>
+      <p>Power BI is what happens when you take that Excel instinct and give it real infrastructure. Connected data sources, live refresh, interactive filtering, drill-through pages. The technology is genuinely powerful. But the biggest mistake marketers make is treating Power BI as a visualization tool when it's really a communication tool. The design decisions you make matter just as much as the data you put into it.</p>
+      <h2>Start With the Business Question, Not the Data</h2>
+      <p>Before you open Power BI, you need clarity on one thing: what decision does this dashboard need to support? That sounds obvious, but most marketing dashboards I've encountered were built backwards — someone pulled every available metric into a report and arranged it on a page. The result is a document that's comprehensive and useless.</p>
+      <p>Good dashboards are opinionated. They answer a specific question for a specific audience. A campaign performance dashboard for a media buyer looks nothing like a brand health dashboard for a CMO. The data might overlap, but the hierarchy of information, the level of granularity, and the visual choices all depend on who is reading it and what they need to do next.</p>
+      <p>Before building anything, write down: Who is this for? What decision will they make after reading it? What's the single most important number on this page? If you can't answer those three questions clearly and specifically, you're not ready to build yet. The time you spend on this up front will save you significant rework later when you realize the first version didn't actually help anyone make a decision.</p>
+      <h2>KPI Hierarchy and Layout</h2>
+      <p>The layout of your dashboard communicates priority before the viewer reads a single number. The hero metric — your most important KPI — belongs top-center or top-left. Humans read dashboards like they read a page: top to bottom, left to right. Use that directional gravity to your advantage.</p>
+      <p>A good rule of thumb: 5 to 7 visuals per page. More than that and you're asking the viewer to do the prioritization work you should have done for them. Each additional visual dilutes attention. If you genuinely have more metrics to show, create separate pages with drill-through from the summary. Keep the top level clean, and let the detail pages absorb the complexity.</p>
+      <p>For marketing dashboards specifically, I'd structure the KPI hierarchy around a campaign goal. If the goal is awareness, your hero metric is reach or share of voice, supported by frequency, brand recall (if you have survey data), and CPM benchmarks. If the goal is conversion, your hero metric is conversion rate or ROAS, supported by click-through rate, cost per acquisition, and funnel drop-off by stage. The supporting metrics contextualize the hero metric — they don't compete with it. Viewers should be able to interpret the hero metric and then use the supporting visuals to understand why it's moving the way it is.</p>
+      <h2>The 5-Second Rule</h2>
+      <p>This is the test I apply to every dashboard page: can someone who hasn't built it understand what's most important within five seconds of looking at it? If the answer is no, the design has failed — regardless of how accurate the data is or how hard you worked on it.</p>
+      <p>The most common culprits: too many colors, inconsistent visual types, absent or unclear labels, and hero metrics buried in the middle of a cluttered page. Power BI gives you a lot of formatting flexibility, and that freedom is both a feature and a trap. More options mean more opportunities to make choices that create visual noise rather than visual clarity.</p>
+      <p>Simple visual principles go a long way. Use no more than three to four colors in your palette — and use them consistently. If red means underperforming and green means on-track, use that encoding everywhere on the dashboard, not just in one chart. Don't use bar charts and column charts interchangeably for the same type of data relationship. Choose a visual type that fits the comparison you're making and commit to it. Consistency reduces cognitive load and makes the dashboard feel trustworthy, which matters when people are using it to make real decisions.</p>
+      <h2>Interactive Drill-Downs: Power BI's Real Advantage</h2>
+      <p>What separates Power BI from a static Excel chart isn't the aesthetics — it's interactivity. Slicers, cross-filters, drill-through pages, and bookmarks turn a dashboard from a report into an exploration tool. This is where the real value for marketing teams lives, because the questions that arise in a meeting are rarely the ones you anticipated when you built the dashboard.</p>
+      <p>Consider a campaign performance dashboard. At the summary level, you see overall ROAS for the quarter. A marketing director can click on a specific campaign and drill through to see channel-level breakdown — paid search vs. social vs. display. Click on social and see creative-level performance. Click on a specific creative and see audience segment data. That layered exploration is only possible with proper drill-through architecture, and it completely changes how useful a dashboard is in a live discussion.</p>
+      <p>Setting this up requires planning. Your data model needs to be structured so that relationships between tables make drill-through logical — campaigns to channels to creatives to audiences. If you build the data model correctly from the start, adding interactivity is relatively straightforward. If you don't, you'll spend most of your time in Power Query untangling a mess that you created by taking shortcuts early on.</p>
+      <h2>Practical Tips for Getting Started</h2>
+      <ul><li>Connect live data sources wherever possible — manual data entry into Power BI defeats the purpose of the tool and creates a maintenance burden that will eventually make the dashboard useless</li><li>Build a dedicated date table and mark it as your date dimension — this unlocks time intelligence functions like YoY comparisons, rolling averages, and period-over-period growth</li><li>Use card visuals sparingly for hero metrics — they're excellent for top-line numbers but add nothing for trend analysis or distribution</li><li>Name your measures clearly and consistently, not just for yourself but for anyone who inherits the file months later when you've moved on</li><li>Always check your numbers against a source of truth before sharing — a beautifully designed dashboard with wrong data destroys credibility faster than no dashboard at all</li></ul>
+      <p>The investment in learning Power BI properly pays back quickly. Once you can build and maintain your own dashboards, you stop waiting for analyst reports and start making faster, better-informed decisions. For a marketing professional who wants to operate at a strategic level, that autonomy and speed is genuinely valuable. You become someone who brings insight to the table rather than someone who asks others for it.</p>
+      <h2>Beyond the Dashboard</h2>
+      <p>The most important thing I've learned about dashboards — in Excel and in Power BI — is that they're not outputs. They're inputs. The dashboard itself is worthless if it doesn't change how someone thinks or decides. That shift in framing changes how you design them: you're not trying to display data, you're trying to change behavior. What does the person who reads this need to feel, understand, or decide? Build backwards from that.</p>
+      <p>Power BI has made sophisticated dashboarding genuinely accessible to marketing professionals without technical backgrounds. That democratization is valuable. But the tool only amplifies the quality of your thinking — it doesn't replace it. The marketers who get the most out of Power BI are the ones who ask better questions before they open the software, and who design for their audience before they design for comprehensiveness.</p>
+    </div>
+
+    <div class="article-footer">
+      <a href="../index.html#blog">&larr; Back to all articles</a>
+    </div>
+  </div>
+</section>
+</div>
+
+<script>
+  // Minimal nav toggle for article pages
+  const navToggle = document.querySelector('.nav__toggle');
+  const navLinks = document.querySelector('.nav__links');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.classList.toggle('active');
+      navToggle.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+  // Scroll nav
+  const nav = document.querySelector('.nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('nav--scrolled', scrollY > 60);
+  }, { passive: true });
+</script>
+<script data-pplx-inline-edit>
+(function(){
+  if(window===window.top)return;
+  function inlineAll(orig,clone){
+    if(orig.nodeType!==1)return;
+    try{
+      var cs=getComputedStyle(orig);
+      var t='';
+      for(var i=0;i<cs.length;i++){t+=cs[i]+':'+cs.getPropertyValue(cs[i])+';';}
+      clone.style.cssText=t;
+    }catch(e){}
+    var oc=orig.children,cc=clone.children;
+    for(var j=0;j<oc.length&&j<cc.length;j++){inlineAll(oc[j],cc[j]);}
+  }
+  function stripExternal(clone){
+    var imgs=clone.querySelectorAll('img');
+    for(var i=0;i<imgs.length;i++){
+      var s=imgs[i].getAttribute('src');
+      if(s&&!s.startsWith('data:'))imgs[i].removeAttribute('src');
+    }
+    var all=clone.querySelectorAll('*');
+    for(var i=0;i<all.length;i++){
+      var st=all[i].style.cssText;
+      if(st&&st.indexOf('url(')>=0){
+        all[i].style.cssText=st.replace(/url\(["']?(?!data:)[^)"']*["']?\)/gi,'none');
+      }
+    }
+  }
+  window.addEventListener('message',function(e){
+    if(!e.data||e.data.type!=='INLINE_EDIT_CAPTURE_REQUEST')return;
+    var scrollX=window.scrollX||window.pageXOffset||0;
+    var scrollY=window.scrollY||window.pageYOffset||0;
+    var w=window.innerWidth,h=window.innerHeight;
+    try{
+      var clone=document.documentElement.cloneNode(true);
+      var rm=clone.querySelectorAll('script,link[rel="stylesheet"],style');
+      for(var i=0;i<rm.length;i++){rm[i].remove();}
+      inlineAll(document.documentElement,clone);
+      stripExternal(clone);
+      var html=new XMLSerializer().serializeToString(clone);
+      var svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="'+h+'">'
+        +'<foreignObject width="100%" height="100%">'
+        +'<div xmlns="http://www.w3.org/1999/xhtml" style="width:'+w+'px;height:'+h+'px;overflow:hidden">'
+        +'<div style="transform:translate(-'+scrollX+'px,-'+scrollY+'px);transform-origin:top left">'
+        +html+'</div></div></foreignObject></svg>';
+      var svgUrl='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
+      var img=new Image();
+      img.onload=function(){
+        var c=document.createElement('canvas');c.width=w;c.height=h;
+        c.getContext('2d').drawImage(img,0,0);
+        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:c.toDataURL('image/png'),scrollX:scrollX,scrollY:scrollY},'*');
+      };
+      img.onerror=function(){
+        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
+      };
+      img.src=svgUrl;
+    }catch(err){
+      window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
+    }
+  });
+})();
+</script></body>
+</html>
